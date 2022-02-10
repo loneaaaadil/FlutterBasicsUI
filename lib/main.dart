@@ -1,8 +1,10 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'dart:ui';
 import 'package:flutter/material.dart';
+
 void main() {
-  runApp(GeekForGeeks());
+  runApp(TabBarDemo());
 }
 
 class GeekForGeeks extends StatelessWidget {
@@ -79,8 +81,7 @@ class GeekForGeeks extends StatelessWidget {
             child: RichText(
               text: const TextSpan(
                 text: "Hello! Aadil",
-                style: TextStyle(
-                  fontSize: 20, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 children: [
                   TextSpan(
                     text: " Ahmad lone",
@@ -206,6 +207,43 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               title: Text('Setting'),
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+// Demo Tabs
+
+class TabBarDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: DefaultTabController(
+        length: 5,
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text("hello Aadil"),
+            backgroundColor: Colors.green[30],
+            bottom: TabBar(
+              tabs: [
+                Tab(icon: Icon(Icons.music_note)),
+                Tab(icon: Icon(Icons.music_video)),
+                Tab(icon: Icon(Icons.camera_alt)),
+                Tab(icon: Icon(Icons.grade)),
+                Tab(icon: Icon(Icons.email)),
+              ],
+            ),
+          ),
+          body: TabBarView(
+            children: [
+              Icon(Icons.music_note),
+              Icon(Icons.music_video),
+              Icon(Icons.camera_alt),
+              Icon(Icons.grade),
+              Icon(Icons.email),
+            ],
+          ),
         ),
       ),
     );
