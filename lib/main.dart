@@ -4,7 +4,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(TabBarDemo());
+  runApp(HorizontalList());
 }
 
 class GeekForGeeks extends StatelessWidget {
@@ -244,6 +244,69 @@ class TabBarDemo extends StatelessWidget {
               Icon(Icons.email),
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+//Hortizonal list
+class HorizontalList extends StatelessWidget {
+  const HorizontalList({Key? key}) : super(key: key);
+
+  final title = 'Hello Aadil';
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: title,
+      home: Scaffold(
+        body: Container(
+          padding: EdgeInsets.only(left: 20),
+          margin: EdgeInsets.symmetric(vertical: 20.0),
+          height: 700.0,
+          child: ListView(scrollDirection: Axis.horizontal, children: <Widget>[
+            Container(
+              height: 480.0,
+              width: 350.0,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                image: DecorationImage(
+                  image: NetworkImage(
+                      "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGNhcnN8ZW58MHx8MHx8&w=1000&q=80"),
+                  fit: BoxFit.fill,
+                ),
+                shape: BoxShape.rectangle,
+              ),
+            ),
+            Container(
+              height: 480.0,
+              width: 350.0,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                image: DecorationImage(
+                  image: NetworkImage(
+                      'https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'),
+                  fit: BoxFit.fill,
+                ),
+                shape: BoxShape.rectangle,
+              ),
+            ),
+            Container(
+              height: 480.0,
+              width: 350.0,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                image: DecorationImage(
+                  image: NetworkImage(
+                      'https://wallpaperaccess.com/full/184117.jpg'),
+                ),
+                shape: BoxShape.rectangle,
+              ),
+            )
+          ]),
+        ),
+        appBar: AppBar(
+          title: Text(title),
         ),
       ),
     );
